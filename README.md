@@ -1,3 +1,5 @@
+
+
 # 🤖 FinSolve RAG-based-role-based-access-control-system-for-the-chatbot
 📄 README.md
 markdown
@@ -30,7 +32,7 @@ A secure, role-aware AI assistant built for FinSolve Technologies. This chatbot 
 | LLM          | OpenRouter / DeepSeek (via API key)    |
 | Storage      | Local persistence (`chroma_db_data/`)  |
 
----
+--  -
 
 ## 📦 Installation
 
@@ -38,41 +40,38 @@ A secure, role-aware AI assistant built for FinSolve Technologies. This chatbot 
 ```bash
 git clone https://github.com/your-username/finsolve-rbac-chatbot.git
 cd finsolve-rbac-chatbot
+```
 
 
-
-2. Install Dependencies
-bash
-Copy
-Edit
+### 2. Install Dependencies
+```bash
 pip install -r requirements.txt
-3. Set Environment Variables
-Create a .env file in the root directory with your API key:
+```
 
-ini
-Copy
-Edit
+### 3. Set Environment Variables
+Create a .env file in the root directory with your API key:
 OPENROUTER_API_KEY=your-api-key-here
-4. Ingest Role-Based Documents
-bash
-Copy
-Edit
+
+
+### 4. Ingest Role-Based Documents
+```bash
 python role_based_ingest.py
-5. Launch the Backend (FastAPI)
-bash
-Copy
-Edit
+```
+
+### 5. Launch the Backend (FastAPI)
+```bash
 uvicorn main:app --reload
-6. Launch the Frontend (Streamlit)
-bash
-Copy
-Edit
+```
+
+
+### 6. Launch the Frontend (Streamlit)
+```bash
 streamlit run app.py
-🧭 Directory Structure
-bash
-Copy
-Edit
-.
+```
+
+
+### 🧭 Directory Structure
+```
 ├── app.py                   # Streamlit interface
 ├── main.py                  # FastAPI backend logic
 ├── rag_engine.py            # ChromaDB + embeddings + querying
@@ -82,7 +81,10 @@ Edit
 ├── chroma_db_data/          # ChromaDB persistent directory
 ├── data/                    # Markdown and CSV document sources
 └── README.md
-👥 Supported Roles
+```
+
+
+### 👥 Supported Roles
 Each role receives only the data it is authorized to access:
 
 employee
@@ -99,15 +101,14 @@ c-level
 
 All non-employee roles also have access to employee documentation.
 
-📄 License
+### 📄 License
 This project is licensed under the MIT License.
-© 2025 FinSolve Technologies. All rights reserved.
 
-🙌 Contributing
+### 🙌 Contributing
 We welcome contributions to improve features, performance, and security.
 Please fork the repository and open a pull request with your changes.
 
-📫 Contact
+### 📫 Contact
 For internal deployments, support, or LLM key provisioning, please contact the FinSolve Engineering Team.
 
 yaml
@@ -115,19 +116,3 @@ Copy
 Edit
 
 ---
-
-Would you like me to:
-- Drop this into a downloadable `README.md` file?
-- Create a matching `.gitignore`?
-- Zip the full working project folder with all fixes included?
-
-Let me know and I’ll prep it instantly.
-
-
-
-
-
-
-
-Ask ChatGPT
-
