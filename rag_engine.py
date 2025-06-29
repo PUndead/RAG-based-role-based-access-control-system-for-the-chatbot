@@ -1,10 +1,10 @@
-# rag_engine.py
 from chromadb import Client
 from chromadb.config import Settings
 from chromadb.utils import embedding_functions
 from typing import List, Dict
 from dotenv import load_dotenv
 import os
+import uuid
 
 # Role-based access control
 ROLE_ACCESS = {
@@ -35,10 +35,10 @@ def get_or_create_collection():
         embedding_function=embedding_fn
     )
 
-def add_documents_to_collection(documents: List[str], metadatas: List[Dict], start_idx: int = 0):
+def add_documents_to_collection(documents: List[str], metadatas: List[Dict]):
     collection = get_or_create_collection()
-    ids = [f"doc_{i + start_idx}" for i in range(len(documents))]
-    
+    ids = [str(uuid.uuid4()) for _ in documents]
+
     if len(documents) != len(metadatas):
         raise ValueError("Document and metadata count must match.")
 
@@ -48,6 +48,7 @@ def add_documents_to_collection(documents: List[str], metadatas: List[Dict], sta
         ids=ids
     )
     print(f"✅ Added {len(documents)} documents to 'finsolve_knowledge_base'.")
+
 
 def query_collection(role: str, query: str, k: int = 3):
     role = role.lower()
@@ -59,7 +60,7 @@ def query_collection(role: str, query: str, k: int = 3):
         query_texts=[query],
         n_results=k,
         where={"data_type": {"$in": allowed_types}},
-        include=['documents', 'metadatas']  # ✅ Corrected from 'metadata'
+        include=['documents', 'metadatas']
     )
 
     print(f"🔍 Role: {role}")
