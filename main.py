@@ -53,9 +53,11 @@ def handle_query(payload: QueryPayload):
         "HTTP-Referer": "https://finsolve.com",
         "X-Title": "FinSolve AI Chatbot"
     }
+     
 
+   # LLM model 
     data = {
-        "model": "deepseek/deepseek-r1-0528:free",
+        "model": "deepseek/deepseek-r1-0528:free",          # Change "deeps..." with your llm model 
         "messages": [
             {"role": "system", "content": f"You are a helpful assistant for the {role} team."},
             {"role": "user", "content": f"{query}\n\nContext:\n{context}"}
@@ -66,6 +68,7 @@ def handle_query(payload: QueryPayload):
     print("🚀 Sending request to LLM...")
 
 
+   # Endpoint URL
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)      # change the endpoint url with your API provider
 
     if response.status_code == 200:
