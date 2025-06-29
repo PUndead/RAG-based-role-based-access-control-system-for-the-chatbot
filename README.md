@@ -57,7 +57,7 @@ Create a `.env` file in the root directory with your API key
 ### 4. Changes in `main.py` file
 #### a. Change the llm model 
 #### b. Change the endpoint url
-![Logo](assets/assets/Screenshot 2025-06-29 172705.png)
+![Logo](assets/Screenshot 2025-06-29 172705.png)
 
 
 ### 5. Ingest Role-Based Documents
