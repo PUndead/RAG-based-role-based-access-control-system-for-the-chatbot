@@ -38,8 +38,7 @@ A secure, role-aware AI assistant built for FinSolve Technologies. This chatbot 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/finsolve-rbac-chatbot.git
-cd finsolve-rbac-chatbot
+git clone https://github.com/PUndead/RAG-based-role-based-access-control-system-for-the-chatbot.git
 ```
 
 
