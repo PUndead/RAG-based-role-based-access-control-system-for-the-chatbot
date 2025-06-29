@@ -49,8 +49,15 @@ pip install -r requirements.txt
 ```
 
 ### 3. Set Environment Variables
-Create a .env file in the root directory with your API key:
-OPENROUTER_API_KEY=your-api-key-here
+Create a `.env` file in the root directory with your API key 
+`API_KEY=your-api-key-here`
+
+
+
+### 4. Changes in `main.py` file
+#### a. Change the llm model 
+#### b. Change the endpoint url
+![Logo](https://drive.google.com/file/d/1n_Y5iC2AGJOKWSKNjqT54lOCOcz6KJxL/view)
 
 
 ### 4. Ingest Role-Based Documents
