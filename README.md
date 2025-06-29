@@ -60,18 +60,20 @@ Create a `.env` file in the root directory with your API key
 ![Logo](https://drive.google.com/file/d/1n_Y5iC2AGJOKWSKNjqT54lOCOcz6KJxL/view)
 
 
-### 4. Ingest Role-Based Documents
+### 5. Ingest Role-Based Documents
 ```bash
-python role_based_ingest.py
+python role specific files.py
 ```
 
-### 5. Launch the Backend (FastAPI)
+### 6. Launch the Backend (FastAPI)
+In new terminal run
 ```bash
 uvicorn main:app --reload
 ```
 
 
-### 6. Launch the Frontend (Streamlit)
+### 7. Launch the Frontend (Streamlit)
+In new Terminal run
 ```bash
 streamlit run app.py
 ```
